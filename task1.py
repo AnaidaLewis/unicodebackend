@@ -14,7 +14,7 @@ def find_repetition(z):
             repeat.append(1)
             outputs.append(k)
             
-    return repeat
+    return repeat  
 
 
 # start of main function
