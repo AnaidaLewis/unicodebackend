@@ -47,4 +47,4 @@ mn_word = y[4]
 print(*repeat , sep = ' ')
 
 print(f"Most reapeated word is '{mx_word}', it is repeated '{mx_num}' times ")
-print(f"Most reapeated word is '{mn_word}', it is repeated '{mn_num}' times ")
+print(f"Least reapeated word is '{mn_word}', it is repeated '{mn_num}' times ")
