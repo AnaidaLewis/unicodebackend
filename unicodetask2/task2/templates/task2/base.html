@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Website</title>
+    </head>
+    <body>
+        <strong><h1>Pokemon types available in the Pokedex</h1></strong>
+        <ul>
+            {% for i in response.results %}
+            <li>  
+                {{i.name}}
+                {%endfor%}     
+            </li>  
+        </ul>
+
+        
+        
+    </body>
+</html>
