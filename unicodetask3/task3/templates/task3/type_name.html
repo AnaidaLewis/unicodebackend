@@ -1,0 +1,11 @@
+{% extends 'task3/base.html' %}
+
+{% block get_output %}
+                <center><ul>
+                    {% for i in t.pokemon %}
+                    <h2 style="font-size:30px"><li> 
+                        {{i.pokemon.name}}
+                        {%endfor%}     
+                    </h2></li>      
+                </ul></center> 
+{% endblock %}
