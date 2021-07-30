@@ -1,28 +1,33 @@
 <html>
     <head>
         <title>Website</title>
+        <style>
+            body {
+                background-image: url("https://i.pinimg.com/originals/7d/63/67/7d6367c1975779a63059e18213e2f78e.jpg");
+            }
+        </style>
     </head>
-    <body style = "background-color:#d0f190">
-        <strong><h1 style="font-size:350%; color:#ff3d03 "><center>Pokemon types available in the Pokedex</center></h1></strong>
-        <div id= "title", name="title">
-            <center><h1>
+    <body>
+        <h1 style="font-size:70px; color:#0b00df "><center>Pokemon types available in the Pokedex</center></h1>
+        <div style="font-size:40px; color:rgb(255, 249, 78)", id= "title", name="title">
+            <center>
                 {% block title %}
                 {% endblock %}
-            </h1></center>
+            </center>
         </div>
 
-        <div id= "content", name="content">
-            
+        <div style="font-size:30px", id= "content", name="content">
+    
             {% block content %}
             {% endblock %}
-            
+    
         </div>
 
         <div>
             {% block get_output %}
                 <ul>
                     {% for i in response.results %}
-                    <h2 style="font-size:30px"><li> 
+                    <h2 style="font-size:40px; color:rgb(137, 196, 54)"><li> 
                         {{i.name}}
                         {%endfor%}     
                     </h2></li>      
