@@ -1,0 +1,13 @@
+{% extends 'task3/type_name.html' %}
+
+{% block title %} Get details of your favorite pokemon! {% endblock %}
+
+
+{% block content %}
+<form method="post" action= "/create/details/">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" , name ="save">Search Pokemon</button>
+</form>
+{% endblock %}
+

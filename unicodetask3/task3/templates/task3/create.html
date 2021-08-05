@@ -1,11 +1,55 @@
 {% extends 'task3/base.html' %}
 
+{%block background_img%}
+<style>
+    body {
+        min-height: 40cm;
+        margin: auto;
+        
+        background-image: url("https://wallpaperaccess.com/full/349651.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+</style>
+
+<style>
+    /* .button:hover {
+        background-color: rgb(255, 229, 83); 
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    } */
+</style>
+{%endblock%}
+
 {% block title %} Find a Pokemon! {% endblock %}
 
 {% block content %}
 <form method="post" action= "/create/">
     {% csrf_token %}
     {{form.as_p}}
-    <button type="submit" , name ="save">Search Pokemon</button>
+    <button type="submit" style = "background-color:rgb(255, 229, 83); border-radius:19px;"  , name ="save">Search Pokemon</button>
 </form>
 {% endblock %}
+
+{%block get_output%}
+
+<div>  
+    {% for i in response.results %}
+    <button type="button"  style = "background-color:rgb(173, 254, 242); padding:10px 2%; border-radius:15px; margin:40px;">
+        <h2 style="font-size:50px; color:rgb(0, 0, 0); text-transform:capitalize; font-family:fantasy">
+            {{i.name}}
+        </h2> 
+    </button>
+    {%endfor%}     
+         
+</div>
+{%endblock%}

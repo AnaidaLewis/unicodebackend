@@ -1,0 +1,74 @@
+{% extends 'task3/base.html' %}
+{% block background_img%}
+        <style>
+            body {
+            
+                min-height: 40cm;
+                margin: auto;
+                
+                background-image: url("https://i.pinimg.com/originals/f1/f8/df/f1f8dfcde6e2d6522a24e8e29a97daa1.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        </style>
+{%endblock%}
+{%block page%}
+{{n}}
+{%endblock%}
+
+<p>
+{% block img %}
+<img src = {{pic}} align = "left" alt="pokemon img" style="width:700px;height:700px;">
+{%endblock%}
+
+
+{% block get_output %}
+<h2 style="font-size:50px; color:rgb(0, 0, 0); text-transform:capitalize; font-family:fantasy;">
+<ul>
+    <li>
+        Weight = 
+        <button type="button" style = "background-color:rgb(206, 252, 100); padding:10px 2%; border-radius:15px; margin:20px;">{{t.weight}}</button>
+    </li>
+    <li>
+        Height =
+        <button type="button" style = "background-color:rgb(206, 252, 100); padding:10px 2%; border-radius:15px; margin:20px;">{{t.height}}</button>
+    </li>
+        <li> Types:</li>
+        <div style = "word-spacing: 30px;">
+            {%for i in t.types%}
+                <button type="button" style = "background-color:rgb(206, 252, 100); padding:10px 2%; border-radius:15px; margin:20px;">
+                    {{i.type.name}} 
+                </button>
+            {%endfor%}
+        </div>
+
+        <li> Abilities:</li>
+        <div style = "word-spacing: 30px;">
+            {%for i in t.abilities%}
+                <button type="button" style = "background-color:rgb(206, 252, 100); padding:10px 2%; border-radius:15px; margin:20px;">
+                    {{i.ability.name}} 
+                </button>
+            {%endfor%}
+        </div>
+
+        <li> Moves:</li>
+        <div style = "word-spacing: 30px;">
+            {%for i in t.moves%}
+                <button type="button" style = "background-color:rgb(206, 252, 100); padding:10px 2%; border-radius:15px; margin:20px;">
+                    {{i.move.name}} 
+                </button>
+            {%endfor%}
+        </div>
+</ul>
+<!-- <ul>
+    {% for i in t.abilities %}
+    <h2 style="font-size:30px; color:aquamarine" ><li> 
+        {{i.ability.name}} 
+        {%endfor%}     
+    </li></h2>      
+</ul>  -->
+</h2>
+{% endblock %}
+
+</p>
