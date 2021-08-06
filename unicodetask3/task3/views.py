@@ -3,6 +3,7 @@ from django.http import HttpResponse,HttpResponseNotFound
 import requests
 import json 
 from .forms import PokemonType, PokemonDetails
+from .models import Pokemon
 
 # Create your views here.
 def home(request):
@@ -50,6 +51,8 @@ def details (request):
             if a not in pName:
                 return render(request,'task3/invalid_pokemon.html')
             else:  
+                db = Pokemon(name = a )
+                db.save()
                 pokemon = "https://pokeapi.co/api/v2/pokemon/" + a
                 t = requests.get(pokemon).json()
                 id = str(t['id'])
